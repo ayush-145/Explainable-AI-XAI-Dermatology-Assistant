@@ -1,0 +1,16 @@
+To download the HAM10000 dataset
+https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
+
+Activating venv
+& "D:/Explainable AI (XAI) Dermatology Assistant/.venv/Scripts/Activate.ps1"
+
+For Frontend only
+npm start
+
+For Backend only
+uvicorn main:app --reload
+http://127.0.0.1:8000/docs
+
+Building both Frontend and Backend
+docker-compose up --build
+http://localhost:3000

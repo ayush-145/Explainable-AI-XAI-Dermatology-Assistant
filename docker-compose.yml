@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build: ./backend        # Tells Docker to build from the backend/Dockerfile
+    ports:
+      - "8000:8000"        # Maps your computer's port 8000 to the container's port 8000
+    volumes:
+      - ./backend:/app     # (Optional) This mounts your code, so changes reflect live
+    
+  frontend:
+    build: ./frontend       # Tells Docker to build from the frontend/Dockerfile
+    ports:
+      - "3000:80"          # Maps your computer's port 3000 to the container's port 80 (nginx)
+    depends_on:
+      - backend            # Makes sure the backend starts before the frontend
